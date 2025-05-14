@@ -1,0 +1,25 @@
+[project]
+name = "famforge"
+version = "0.1.0"
+description = "Summon and bond with magical familiars from elemental domains."
+authors = [{ name = "UncompiledSelf", email = "justincox.dev@gmail.com" }]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+dependencies = [
+  "typer[all]",
+  "rich"
+]
+
+[project.scripts]
+famforge = "famforge.main:app"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

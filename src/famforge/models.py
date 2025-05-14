@@ -7,6 +7,7 @@ class Familiar:
     species: str
     element: str
     size: str
+    gender: str
     temperament: str
     origin: str
     quirks: List[str] = field(default_factory=list)

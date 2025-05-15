@@ -92,6 +92,8 @@ def list_bonded(
             origin = f.get("origin", "")
             ability = f.get("passive_ability", "")
             quirks = f.get("quirks", [])
+            soul_note = f.get("soul_note", "")
+            
 
             console.print(f"  • [bold]Origin:[/bold] {origin}")
             console.print(f"  • [bold]Gender:[/bold] {gender} | [bold]Temperament:[/bold] {temperament}")
@@ -101,4 +103,6 @@ def list_bonded(
                     console.print(f"    - {q}")
             if ability:
                 console.print(f"  • [bold]Ability:[/bold] {ability}")
+            if soul_note:
+                console.print(f"  • [bold]Soul Note:[/bold] “{soul_note}”")
             console.print()

@@ -59,6 +59,6 @@ def profile(name: str):
         console.print(f"  • [bold]Ability:[/bold] {match['passive_ability']}")
 
     if match.get("soul_note"):
-        console.print(f"  • [bold]Soul Note:[/bold] {match['soul_note']}")
+        console.print(f"  • [bold]Soul Note:[/bold] “{match['soul_note']}”")
 
     console.print()

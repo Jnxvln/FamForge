@@ -8,7 +8,7 @@ from . import bond
 from . import list
 from . import show
 
-__version__ = "0.1.1"
+__version__ = "0.1.3"
 
 app = typer.Typer(help="Summon and bond with your magical familiar")
 

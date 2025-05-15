@@ -4,7 +4,7 @@ All notable changes to **FamForge** will be documented here.
 
 ---
 
-## [0.1.1] - 2024-05-14
+## [0.1.2] - 2024-05-14
 
 ### Added
 - `--version` flag support

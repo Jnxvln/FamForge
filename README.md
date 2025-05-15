@@ -111,11 +111,15 @@ python -m src.famforge.main --version
 
 ## 🔮 Roadmap
 
-- `show <name>` command
-- Soul note editing
-- Bond level upgrades
-- Random familiar recall
-- Lore export (Markdown or scroll template)
+- [x] `summon`
+- [x] `bond now`
+- [x] `bond note`
+- [x] `show profile`
+- [x] `list bonded` with `--details`
+- [x] display soul notes
+- [ ] `bond levelup`
+- [ ] `list bonded --random`
+- [ ] `export` as Markdown
 
 ---
 

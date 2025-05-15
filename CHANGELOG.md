@@ -1,22 +1,30 @@
 # 📜 Changelog
 
-All notable changes to this project will be documented in this file.
-
-This project adheres to [Semantic Versioning](https://semver.org/).
+All notable changes to **FamForge** will be documented here.
 
 ---
 
-## [0.1.1] - 2025-05-14
+## [0.1.1] - 2024-05-14
+
 ### Added
-- `summon` command to generate a magical familiar
-- Trait locking flags: `--lock-element`, `--lock-size`, etc.
-- `--allow-whimsy` flag for humorous/surreal quirks
-- Karma seed for each familiar to allow deterministic outputs
+- `--version` flag support
+- `bond now` command to save the last summoned familiar
+- Familiars are now saved to `~/.famforge/familiars.json`
+- `list bonded` command to view bonded familiars in a table
+- `--details` flag to show full familiar lore and traits
+- Filters added: `--name`, `--element`, `--species`
+- Rich CLI formatting using `rich.table`, `rich.console`
 
-### Changed
-- Initial project structure with `src/famforge`
-- Upgraded CLI display with better formatting and phrasing
+### Improved
+- Familiar data serialization using `pydantic.BaseModel`
+- Modular structure for adding future commands
 
-### Notes
-- This is the first stable internal prototype of FamForge.
-- Future versions will include `bond`, `reroll`, and rich formatting.
+### Fixed
+- CLI now respects missing grimoire directories and handles them gracefully
+
+---
+
+## [0.1.0] - Initial Release
+
+- Project initialized
+- Basic `summon` functionality implemented

@@ -1,10 +1,16 @@
 import json
 import typer
+from pathlib import Path
 from rich import print
 from rich.pretty import Pretty
 from .generator import generate_familiar
+from . import bond
+from . import list
+
+__version__ = "0.1.1"
 
 app = typer.Typer(help="Summon and bond with your magical familiar")
+app.add_typer(bond.app, name="bond")
 
 # Optional color mapping for elements
 ELEMENT_COLORS = {
@@ -16,6 +22,26 @@ ELEMENT_COLORS = {
     "Spirit": "cyan",
     "Aether": "purple"
 }
+
+def show_version(value: bool):
+    if value:
+        print(f"FamForge v{__version__}")
+        raise typer.Exit()
+
+@app.callback()
+def main(
+    version: bool = typer.Option(
+        None,
+        "--version",
+        help="Show the version and exit.",
+        callback=show_version,
+        is_eager=True
+    )
+):
+    """
+    FamForge: A CLI tool to summon and bond with magical familiars.
+    """
+    pass
 
 @app.command()
 def summon(
@@ -56,9 +82,24 @@ def summon(
         print(f"[bold yellow]Bond Level:[/bold yellow] {familiar.bond_level}")
         print(f"[bold yellow]Soul Note:[/bold yellow] {familiar.soul_note}")
         print(f"[bold yellow]Karma Seed:[/bold yellow] {familiar.karma_seed}")
+        
+        # Save last summoned familiar for bonding
+        
+        # Safely serialize Familiar
+        TEMP_PATH = Path.home() / ".famforge" / "last_summoned.json"
+        TEMP_PATH.parent.mkdir(parents=True, exist_ok=True)
+        data = familiar.model_dump() # Using Pydantic v2 `model_dump`
+
+        # Write to file
+        with open(TEMP_PATH, "w") as f:
+            json.dump(data, f, indent=2)
 
     except ValueError as e:
         print(f"\n[bold red]Error:[/bold red] {e}")
+        
+# Register the commands
+app.add_typer(bond.app, name="bond")
+app.add_typer(list.app, name="list")
 
 if __name__ == "__main__":
     app()

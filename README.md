@@ -1,77 +1,125 @@
-# 🐉 FamForge
-*Summon, shape, and bond with magical familiars from the aether.*
+# 🐾 FamForge
 
-FamForge is a mystical command-line tool that lets you generate richly-detailed magical companions using the power of storytelling, randomness, and optional chaos.
+**FamForge** is a magical command-line tool that allows you to summon, bond, and catalog your very own mystical familiars. Generate randomized creatures with rich backstories, elemental traits, whimsical quirks, and more — then save them forever in your personal grimoire.
 
 ---
 
 ## ✨ Features
 
-- 🔮 Summon unique familiars with randomized traits and lore
-- 🔐 Lock specific traits across summons (e.g. element, species)
-- 🎭 Enable whimsical or surreal quirks with `--allow-whimsy`
-- 📜 Generate deep lore, magical abilities, and soul signatures
+- Summon unique magical familiars
+- Lock traits like element, species, gender, and more
+- Add whimsical quirks for a playful twist
+- Bond with familiars and save them to your grimoire
+- View all bonded companions in a color-coded table
+- Filter by name, species, or element
+- View detailed familiar profiles with `--details`
 
 ---
 
 ## 🚀 Installation
 
-1. Clone the repository:
+Clone the repository and install requirements:
+
 ```bash
-git clone git@github.com:Jnxvln/FamForge.git
+git clone https://github.com/Jnxvln/FamForge.git
 cd FamForge
-```
-
-2. Create & activate virtual environment:
-```bash
-python -m venv ~/venvs/famforge
-source ~/venvs/famforge/bin/activate
-```
-
-3. Install dependencies:
-```bash
+python -m venv .venv
+source .venv/bin/activate  # Or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🧪 Usage
+## 🧙 Usage
+
+### Summon a Familiar
 
 ```bash
-python -m src.famforge.main --help
+python -m src.famforge.main summon
 ```
 
-### Example:
+With locked traits:
+
 ```bash
-python -m src.famforge.main --lock-element Fire --lock-size Large --allow-whimsy
+python -m src.famforge.main summon --lock-element Fire --lock-size Medium --allow-whimsy
 ```
 
 ---
 
-## 🛣️ Roadmap & Versioning (SemVer)
+### Bond with the Last Summoned Familiar
 
-FamForge follows [Semantic Versioning](https://semver.org/) and evolves in magical milestones:
-
-| Version | Milestone |
-|---------|-----------|
-| `v0.1.0` | Initial summon command, trait locking, whimsy mode |
-| `v0.2.0` | `bond` command to save familiars |
-| `v0.3.0` | Rich-powered output formatting |
-| `v0.4.0` | Persistent trait locking + reroll support |
-| `v0.5.0` | Expanded species, quirks, and elemental synergy |
-| `v1.0.0` | Modular CLI, full feature set, public-ready ✨ |
-
-Want to help shape the path? Ideas welcome via issues or PRs!
+```bash
+python -m src.famforge.main bond now --name Nyxa
+```
 
 ---
 
-## 📝 License
+### View Your Grimoire
 
-This project is licensed under the MIT License.  
-See the [LICENSE](LICENSE) file for details.
+#### Simple Table
+
+```bash
+python -m src.famforge.main list bonded
+```
+
+#### Filtered Table
+
+```bash
+python -m src.famforge.main list bonded --element Fire
+```
+
+#### Detailed View
+
+```bash
+python -m src.famforge.main list bonded --details
+```
+
+#### Combined Filters
+
+```bash
+python -m src.famforge.main list bonded --element Fire --species Emberox --details
+```
 
 ---
 
-## 💖 Author
+## 📂 Grimoire Location
 
-Made with care and a spark of magic by [Justin Cox](https://github.com/Jnxvln)
+FamForge stores your familiars in a JSON file at:
+
+```
+~/.famforge/familiars.json
+```
+
+This works across platforms:
+
+| OS      | Path Example                                 |
+|---------|----------------------------------------------|
+| Linux   | `/home/username/.famforge/familiars.json`    |
+| macOS   | `/Users/username/.famforge/familiars.json`   |
+| Windows (WSL) | `/home/username/.famforge/familiars.json` |
+| Windows (native) | `C:\Users\YourName\.famforge\familiars.json` (if ported)
+
+---
+
+## 📦 Version
+
+```bash
+python -m src.famforge.main --version
+```
+
+---
+
+## 🔮 Roadmap
+
+- `show <name>` command
+- Soul note editing
+- Bond level upgrades
+- Random familiar recall
+- Lore export (Markdown or scroll template)
+
+---
+
+## 🧡 Credits
+
+Created with magic and love by UncompiledSelf (@Jnxvln). FamForge is your gateway to bonding with the unseen. 🌙
+

@@ -1,6 +1,6 @@
 [project]
 name = "famforge"
-version = "0.1.0"
+version = "0.1.1"
 description = "Summon and bond with magical familiars from elemental domains."
 authors = [{ name = "UncompiledSelf", email = "justincox.dev@gmail.com" }]
 readme = "README.md"
@@ -25,7 +25,7 @@ package-dir = { "" = "src" }
 where = ["src"]
 
 [tool.bumpversion]
-current_version = "0.1.0"
+current_version = "0.1.1"
 commit = true
 tag = true
 

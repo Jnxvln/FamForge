@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [0.1.0] - 2025-05-14
+## [0.1.1] - 2025-05-14
 ### Added
 - `summon` command to generate a magical familiar
 - Trait locking flags: `--lock-element`, `--lock-size`, etc.

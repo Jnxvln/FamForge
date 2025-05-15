@@ -6,11 +6,11 @@ from rich.pretty import Pretty
 from .generator import generate_familiar
 from . import bond
 from . import list
+from . import show
 
 __version__ = "0.1.1"
 
 app = typer.Typer(help="Summon and bond with your magical familiar")
-app.add_typer(bond.app, name="bond")
 
 # Optional color mapping for elements
 ELEMENT_COLORS = {
@@ -100,6 +100,7 @@ def summon(
 # Register the commands
 app.add_typer(bond.app, name="bond")
 app.add_typer(list.app, name="list")
+app.add_typer(show.app, name="show")
 
 if __name__ == "__main__":
     app()

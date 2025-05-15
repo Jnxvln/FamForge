@@ -1,10 +1,14 @@
+annotated-types==0.7.0
 click==8.1.3
 colorama==0.4.6
 -e git+https://github.com/Jnxvln/FamForge.git@d2ea5dc01fad362e131cbba77951dc0bb3646d85#egg=famforge
 markdown-it-py==2.2.0
 mdurl==0.1.2
+pydantic==2.11.4
+pydantic_core==2.33.2
 Pygments==2.19.1
 rich==13.3.5
 shellingham==1.5.4
 typer==0.9.0
+typing-inspection==0.4.0
 typing_extensions==4.13.2

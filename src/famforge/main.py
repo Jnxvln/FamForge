@@ -6,7 +6,7 @@ from rich.pretty import Pretty
 from .generator import generate_familiar
 from . import summon, bond, list, show, reveal
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 app = typer.Typer(help="FamForge CLI")
 

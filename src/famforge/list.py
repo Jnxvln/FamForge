@@ -1,9 +1,11 @@
 import json
+from pathlib import Path
 import typer
 from rich import print
 from rich.table import Table
 from rich.console import Console
-from pathlib import Path
+from .incantation import generate_incantation
+
 
 app = typer.Typer()
 
@@ -93,7 +95,6 @@ def list_bonded(
             ability = f.get("passive_ability", "")
             quirks = f.get("quirks", [])
             soul_note = f.get("soul_note", "")
-            
 
             console.print(f"  • [bold]Origin:[/bold] {origin}")
             console.print(f"  • [bold]Gender:[/bold] {gender} | [bold]Temperament:[/bold] {temperament}")
@@ -105,4 +106,8 @@ def list_bonded(
                 console.print(f"  • [bold]Ability:[/bold] {ability}")
             if soul_note:
                 console.print(f"  • [bold]Soul Note:[/bold] “{soul_note}”")
+            if f.get("karma_seed"):
+                incantation = generate_incantation(f["karma_seed"])
+                console.print(f"  • [bold]Incantation:[/bold] [italic cyan]{incantation}[/italic cyan]")
+
             console.print()

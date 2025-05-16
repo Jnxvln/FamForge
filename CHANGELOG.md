@@ -4,6 +4,18 @@ All notable changes to **FamForge** will be documented here.
 
 ---
 
+## [0.1.4] - 2024-05-16
+### Added
+- New CLI structure: `famforge summon call`, `bond now`, `show profile`, etc.
+- `reveal incantation` command to uncover mystical passphrases
+- Incantations now appear in `show profile` and `list bonded --details` output
+- Enhanced CLI output with color-coded styling and formatting
+
+### Fixed
+- Entry-point script issue when using editable installs (`pip install -e .`)
+
+---
+
 ## [0.1.2] - 2024-05-14
 
 ### Added

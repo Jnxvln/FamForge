@@ -1,27 +1,25 @@
 # 🐾 FamForge
 
-**FamForge** is a magical command-line tool that allows you to summon, bond, and catalog your very own mystical familiars. Generate randomized creatures with rich backstories, elemental traits, whimsical quirks, and more — then save them forever in your personal grimoire.
+**FamForge** is a magical command-line tool for conjuring and connecting with mystical familiars. Generate unique creatures with elemental traits, rich backstories, quirks, and soul-deep meaning — then save them forever in your personal grimoire.
 
 ---
 
 ## ✨ Features
 
-- Summon unique magical familiars
+- Summon deeply unique magical familiars
 - Lock traits like element, species, gender, and more
 - Add whimsical quirks for a playful twist
 - Bond with familiars and save them to your grimoire
-- Add personal soul notes
-- Reveal a hidden **incantation** embedded in each karma seed
-- View all bonded companions in a color-coded table
+- Attach personal soul notes to each companion
+- Reveal a secret **incantation** hidden in each karma seed
+- View bonded familiars in a color-coded table
 - Filter by name, species, or element
-- View detailed familiar profiles with `--details`
-- Modular command structure: `summon call`, `bond now`, `bond note`, `reveal incantation`, etc.
+- Display full familiar profiles with `--details`
+- Modular commands: `summon call`, `bond now`, `bond note`, `reveal incantation`, etc.
 
 ---
 
 ## 🚀 Installation
-
-Clone the repository and install requirements:
 
 ```bash
 git clone https://github.com/Jnxvln/FamForge.git
@@ -69,35 +67,27 @@ famforge bond note --name Nyxa --note "You were with me during the fire."
 
 ```bash
 famforge reveal incantation Nyxa
-# Example output: dusk-glyph-flicker
+# Example: dusk-glyph-flicker
 ```
 
 ---
 
 ### View Your Grimoire
 
-#### Simple Table
-
 ```bash
 famforge list bonded
 ```
 
-#### Filtered Table
+With filters:
 
 ```bash
-famforge list bonded --element Fire
+famforge list bonded --element Fire --species Emberox
 ```
 
-#### Detailed View
+Detailed view:
 
 ```bash
 famforge list bonded --details
-```
-
-#### Combined Filters
-
-```bash
-famforge list bonded --element Fire --species Emberox --details
 ```
 
 ---
@@ -110,15 +100,15 @@ famforge show profile Nyxa
 
 ---
 
-## 📂 Grimoire Location
+## 📂 Familiar Storage
 
-FamForge stores your familiars in a JSON file at:
+FamForge stores your familiars in a grimoire file located at:
 
 ```
 ~/.famforge/familiars.json
 ```
 
-This works across platforms:
+Platform examples:
 
 | OS               | Path Example                                   |
 |------------------|------------------------------------------------|
@@ -153,6 +143,9 @@ famforge --version
 
 ---
 
-## 🧡 Credits
+## ☕ Support
 
-Created with magic and love by UncompiledSelf (@Jnxvln). FamForge is your gateway to bonding with the unseen. 🌙
+If this project speaks to you, consider [supporting it on Buy Me a Coffee](https://buymeacoffee.com/uncompiledself).  
+Every little bit helps fuel the forge. ❤️‍🔥
+
+[![Tip the Mage](https://img.shields.io/badge/Tip%20the%20Mage-%F0%9F%8C%99-6e5cb6)](https://buymeacoffee.com/uncompiledself)

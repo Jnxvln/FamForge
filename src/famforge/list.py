@@ -106,8 +106,8 @@ def list_bonded(
                 console.print(f"  • [bold]Ability:[/bold] {ability}")
             if soul_note:
                 console.print(f"  • [bold]Soul Note:[/bold] “{soul_note}”")
-            if f.get("karma_seed"):
-                incantation = generate_incantation(f["karma_seed"])
-                console.print(f"  • [bold]Incantation:[/bold] [italic cyan]{incantation}[/italic cyan]")
+            # if f.get("karma_seed"):
+            #     incantation = generate_incantation(f["karma_seed"])
+            #     console.print(f"  • [bold]Incantation:[/bold] [italic cyan]{incantation}[/italic cyan]")
 
             console.print()

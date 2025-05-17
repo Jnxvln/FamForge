@@ -1,12 +1,11 @@
 import typer
 import hashlib
 import random
-from rich import print
 from pathlib import Path
 from typing import List
 import json
 
-app = typer.Typer(help="Reveal hidden truths about your familiars")
+app = typer.Typer(help="Render the sigil of a familiar", invoke_without_command=True)
 
 GRIMOIRE_PATH = Path.home() / ".famforge" / "familiars.json"
 
@@ -28,6 +27,12 @@ STATE_WORDS: List[str] = [
 ]
 
 def generate_incantation(karma_seed: str) -> str:
+    """
+    Generates a deterministic mystical incantation from a karma_seed UUID.
+
+    :param karma_seed: A UUID or seed string for the familiar
+    :return: A string incantation in the format 'essence-shape-state'
+    """
     h = hashlib.sha256(karma_seed.encode()).hexdigest()
     seed = int(h[:8], 16)
     random.seed(seed)
@@ -39,6 +44,13 @@ def generate_incantation(karma_seed: str) -> str:
     return f"{essence}-{shape}-{state}"
 
 def render_binary_sigil(incantation: str, name: str) -> str:
+    """
+    Renders an ASCII sigil using binary encoding of the incantation.
+
+    :param incantation: The incantation string
+    :param name: The familiar's name
+    :return: A multiline string representing the sigil
+    """
     binary = ''.join(format(ord(c), '08b') for c in incantation)
     width = 18
     height = (len(binary) + width - 1) // width
@@ -56,13 +68,8 @@ def render_binary_sigil(incantation: str, name: str) -> str:
     lines.append("╚" + "═" * (width * 2 + 2) + "╝")
     return '\n'.join(lines)
 
-def decode_binary_to_text(binary: str) -> str:
-    chars = [binary[i:i+8] for i in range(0, len(binary), 8)]
-    text = ''.join(chr(int(c, 2)) for c in chars if len(c) == 8)
-    return text
-
-@app.command("sigil")
-def reveal_sigil(name: str = typer.Argument(..., help="Name of the bonded familiar")):
+@app.callback()
+def main(name: str = typer.Argument(..., help="Name of the bonded familiar")):
     """
     Show the ASCII sigil of a bonded familiar based on their incantation.
     """
@@ -91,49 +98,11 @@ def reveal_sigil(name: str = typer.Argument(..., help="Name of the bonded famili
     print()
     print(sigil)
 
-@app.command("incantation")
-def reveal_incantation(
-    name: str = typer.Argument(..., help="Name of the bonded familiar"),
-    show_bits: bool = typer.Option(False, "--show-bits", help="Also display the binary encoding")
-):
-    """
-    Reveal the encoded incantation for a bonded familiar.
-    """
-    if not GRIMOIRE_PATH.exists():
-        print("[bold red]No grimoire found.[/bold red]")
-        raise typer.Exit()
-
-    with open(GRIMOIRE_PATH, "r") as f:
-        data = json.load(f)
-        familiars = data.get("familiars", [])
-
-    match = next((f for f in familiars if f.get("name", "").lower() == name.lower()), None)
-
-    if not match:
-        print(f"[yellow]No familiar named '{name}' found in your grimoire.[/yellow]")
-        raise typer.Exit()
-
-    karma = match.get("karma_seed")
-    if not karma:
-        print(f"[red]Familiar '{name}' is missing a karma seed.[/red]")
-        raise typer.Exit()
-
-    incantation = generate_incantation(karma)
-    # print(f"[bold cyan]Incantation for {name}:[/bold cyan] [bold yellow]{incantation}[/bold yellow]")
-    binary = ''.join(format(ord(c), '08b') for c in incantation)
-
-    print(f"\n[bold cyan]Incantation for {name}:[/bold cyan] [white]{incantation}[/white]")
-    if show_bits:
-        print(f"[bold cyan]Binary:[/bold cyan] [dim]{binary}[/dim]")
+# For manual testing or CLI usage
+if __name__ == "__main__":
+    example_seed = "84aa90ae-3417-47b5-b4e9-beee20273ba9"
+    name = "Veylith"
+    incantation = generate_incantation(example_seed)
+    print("Generated incantation:", incantation)
     print()
-
-@app.command("decode")
-def decode_binary(binary: str = typer.Argument(..., help="Binary string to decode")):
-    """
-    Decode a binary string back into text. Used for discovering incantations from sigils.
-    """
-    try:
-        decoded = decode_binary_to_text(binary)
-        print(f"\n[bold green]Decoded incantation:[/bold green] [white]{decoded}[/white]\n")
-    except Exception as e:
-        print(f"[red]Error decoding binary:[/red] {e}")
+    print(render_binary_sigil(incantation, name))

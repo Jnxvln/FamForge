@@ -4,7 +4,7 @@ from pathlib import Path
 from rich import print
 from rich.pretty import Pretty
 from .generator import generate_familiar
-from . import summon, bond, list, show, reveal
+from . import summon, bond, list, show, reveal, sigil
 
 __version__ = "0.1.4"
 
@@ -48,6 +48,7 @@ app.add_typer(bond.app, name="bond")
 app.add_typer(list.app, name="list")
 app.add_typer(show.app, name="show")
 app.add_typer(reveal.app, name="reveal")
+app.add_typer(sigil.app, name="sigil")
 
 if __name__ == "__main__":
     app()

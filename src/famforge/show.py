@@ -63,9 +63,9 @@ def profile(name: str):
     if match.get("soul_note"):
         console.print(f"  • [bold]Soul Note:[/bold] “{match['soul_note']}”")
         
-    if match.get("karma_seed"):
-        incantation = generate_incantation(match["karma_seed"])
-        console.print(f"  • [bold]Incantation:[/bold] [italic cyan]{incantation}[/italic cyan]")
+    # if match.get("karma_seed"):
+    #     incantation = generate_incantation(match["karma_seed"])
+    #     console.print(f"  • [bold]Incantation:[/bold] [italic cyan]{incantation}[/italic cyan]")
 
 
     console.print()

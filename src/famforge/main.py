@@ -7,7 +7,7 @@ from .generator import generate_familiar
 from .unlock import unlock
 from . import summon, bond, list, show, reveal, sigil, ritual
 
-__version__ = "0.1.5"
+__version__ = "0.1.6"
 
 app = typer.Typer(help="FamForge CLI")
 

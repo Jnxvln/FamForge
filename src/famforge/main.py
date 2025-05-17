@@ -4,7 +4,8 @@ from pathlib import Path
 from rich import print
 from rich.pretty import Pretty
 from .generator import generate_familiar
-from . import summon, bond, list, show, reveal, sigil
+from .unlock import unlock
+from . import summon, bond, list, show, reveal, sigil, ritual
 
 __version__ = "0.1.4"
 
@@ -49,6 +50,8 @@ app.add_typer(list.app, name="list")
 app.add_typer(show.app, name="show")
 app.add_typer(reveal.app, name="reveal")
 app.add_typer(sigil.app, name="sigil")
+app.command()(unlock)
+app.add_typer(ritual.app, name="ritual")
 
 if __name__ == "__main__":
     app()

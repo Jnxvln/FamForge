@@ -3,6 +3,19 @@
 All notable changes to **FamForge** will be documented here.
 
 ---
+## [0.1.6] - 2024-05-17
+
+### Added
+- `sigil` command to display a familiar’s unique ASCII sigil, encoded from their incantation
+- `reveal decode` command to decode binary text into an incantation
+- `unlock <incantation>` command to unlock hidden CLI commands
+- `ritual greet` as the first hidden command (available only after unlocking)
+- Secret incantations no longer displayed in profiles or lists to preserve mystery
+
+### Improved
+- Full incantation lifecycle: summon → bond → sigil → decode → unlock → ritual
+
+---
 
 ## [0.1.5] - 2024-05-17
 ### Added

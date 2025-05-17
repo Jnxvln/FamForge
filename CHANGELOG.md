@@ -4,6 +4,19 @@ All notable changes to **FamForge** will be documented here.
 
 ---
 
+## [0.1.5] - 2024-05-17
+### Added
+- `reveal incantation` now available via CLI to uncover each familiar's unique, deterministic passphrase
+- Familiar incantations now appear in `list bonded --details` and `show profile` views
+- All summon commands now organized under `famforge summon call` for clarity
+- Enhanced README.md with new usage examples, project description, and support badge
+
+### Improved
+- Modular CLI structure now includes `reveal`, `show`, and `summon` command groups
+- FamForge branding, README, and BMAC integration for a more polished open-source presence
+
+---
+
 ## [0.1.4] - 2024-05-16
 ### Added
 - New CLI structure: `famforge summon call`, `bond now`, `show profile`, etc.

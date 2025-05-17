@@ -75,13 +75,33 @@ TEMPERAMENTS = list(Temperament)
 
 # Species mapped by element
 SPECIES_BY_ELEMENT = {
-    Element.AIR: ["Mistcat", "Zephyrfin", "Whispraptor"],
-    Element.WATER: ["Glowlizard", "Rippleback", "Kelpray"],
-    Element.EARTH: ["Stonewing", "Mossbeast", "Ashmole"],
-    Element.FIRE: ["Emberox", "Flareling", "Cinderdrake"],
-    Element.TIME: ["Hourmoth", "Chronohound", "Tickwyrm"],
-    Element.SPIRIT: ["Soulfen", "Wispkin", "Umbrawhisper"],
-    Element.AETHER: ["Nullcat", "Voidbeak", "Gravitine"]
+    Element.AIR: [
+        "Mistcat", "Zephyrfin", "Whispraptor", "Driftalon", "Skywhisp", 
+        "Gustclaw", "Cloudkin", "Stormbleat", "Aerofox", "Vaporyx"
+    ],
+    Element.WATER: [
+        "Glowlizard", "Rippleback", "Kelpray", "Tideglider", "Brinetooth", 
+        "Naiadorn", "Foamscale", "Drenchback", "Coralitch", "Floodmouse"
+    ],
+    Element.EARTH: [
+        "Stonewing", "Mossbeast", "Ashmole", "Rootjaw", "Cragbeast", 
+        "Glimmermole", "Thornox", "Stonecurl", "Lichenhorn", "Burrowelk"
+    ],
+    Element.FIRE: [
+        "Emberox", "Flareling", "Cinderdrake", "Scorchkin", "Ignibark", 
+        "Blazecrow", "Volcaroo", "Cindertuft", "Sparkvex", "Ashadder"
+    ],
+    Element.TIME: [
+        "Hourmoth", "Chronohound", "Tickwyrm" "Sandwyrm", "Tickgeist", 
+        "Clockra", "Hourstag", "Pendulark", "Chronopup", "Temporalin"
+    ],
+    Element.SPIRIT: [
+        "Soulfen", "Wispkin", "Umbrawhisper", "Mirthling", "Soulitch", "Hauntelope", "Grimtail", "Phantasmunk", "Whisperray", "Echofox"
+    ],
+    Element.AETHER: [
+        "Nullcat", "Voidbeak", "Gravitine", "Nebuline", "Voidelk", 
+        "Starvynx", "Galaxbat", "Orbinox", "Quantowl", "Zerokid"
+    ]
 }
 
 # Origins mapped by element type
@@ -89,37 +109,86 @@ ORIGINS_BY_ELEMENT = {
     Element.AIR: [
         "Emerged from a rift high in the sky.",
         "Spun from wind currents dancing across open plains.",
-        "First heard as a whisper echoing through an ancient canyon."
+        "First heard as a whisper echoing through an ancient canyon.",
+        "Formed from the last breath of a wind god.",
+        "Traced into being by the flight paths of lost birds.",
+        "Spun from cloudstuff atop a sleeping giant’s sigh.",
+        "Birthed in the eye of a storm that never touches ground.",
+        "Scattered together by migrating dreams.",
+        "Whistled into form through the reeds of a forgotten flute.",
+        "Woven by zephyrs inside an abandoned sky temple."
     ],
     Element.WATER: [
         "Spawned in a deep current beneath still waters.",
         "Found tangled in seaweed beside a shipwreck no one remembers.",
-        "Surged forth from a tidal pool under twin moons."
+        "Surged forth from a tidal pool under twin moons.",
+        "Bubbled up from the deepest trench of a sunken world.",
+        "Dripped into form from the tears of a weeping reef.",
+        "Flowed out of an ancient spring touched by moonlight.",
+        "Condensed from morning mist above sacred waters.",
+        "Washed ashore after a dreamlike storm.",
+        "Spawned within the eye of a whirlpool that never stops spinning.",
+        "Frozen into existence inside a hollow glacier."
     ],
     Element.EARTH: [
         "Discovered slumbering beneath ancient roots.",
         "Chiseled out of bedrock by the pressure of time itself.",
-        "Rose from the fertile remains of an extinct forest."
+        "Rose from the fertile remains of an extinct forest.",
+        "Unearthed beneath ruins swallowed by the jungle.",
+        "Awakened in the belly of a hibernating mountain.",
+        "Formed where fault lines kissed beneath ancient soil.",
+        "Shaped from loam touched by ancestral memory.",
+        "Mossed into being on a forgotten standing stone.",
+        "Grew slowly beneath centuries of unbroken silence.",
+        "Rumbled awake in the crater of a petrified bloom."
     ],
     Element.FIRE: [
         "Ignited from embers of a sacred pyre.",
         "Birthed during the final breath of a dying volcano.",
-        "Leapt from the hearthfire of an ancient homestead."
+        "Leapt from the hearthfire of an ancient homestead.",
+        "Spawned from the first spark struck in darkness.",
+        "Raised within the heart of a wandering wildfire.",
+        "Forged in the dreams of a dying blacksmith.",
+        "Born from lightning striking ancient ruins.",
+        "Stoked into being by the rage of a forgotten god.",
+        "Crackled forth from a cursed ritual flame.",
+        "Danced out of a coal left smoldering under moonlight."
     ],
     Element.TIME: [
         "Ticked into being by a lost second.",
         "Emerged from the first crack in a broken sundial.",
-        "Spawned between seconds in a moment that no longer exists."
+        "Spawned between seconds in a moment that no longer exists.",
+        "Dropped from the pocket of a wandering chronomancer.",
+        "Formed in the static between two ticking seconds.",
+        "Written into the margins of a forgotten prophecy.",
+        "Echoed backward from the future that never came.",
+        "Spun into being on the spindle of an eternal dusk.",
+        "Shattered out of a broken timeline and reassembled here.",
+        "Fell through a crack in an ancient hourglass."
     ],
     Element.SPIRIT: [
         "Breathed into life by mourning chants.",
         "Formed in the last breath of a peaceful passing.",
-        "Woven from threads of grief and hope in equal measure."
+        "Woven from threads of grief and hope in equal measure.",
+        "Lingered too long at the crossroads of mourning.",
+        "Sewn from soul-threads left behind by old friendships.",
+        "Came to life beneath the lullaby of a grieving child.",
+        "Flickered into being near a shrine no one tends anymore.",
+        "Conjured from the stillness of a prayer left unfinished.",
+        "Coalesced from memories too tender to fade.",
+        "Risen with the mist from a grave forgotten by time."
     ],
     Element.AETHER: [
         "Condensed from collapsing potential in deep space.",
         "Born in the silence between stars.",
-        "Tumbled from the event horizon of a collapsed truth."
+        "Tumbled from the event horizon of a collapsed truth.",
+        "Drifted into form between waking and sleep.",
+        "Woven from the silence before a nova's bloom.",
+        "Fell to earth as a wish that never found a star.",
+        "Shaped by gravitational echoes in a dead dimension.",
+        "Formed where logic unravelled during a dreaming eclipse.",
+        "Birthed from antimatter humming in cosmic rhythm.",
+        "Leaked into this realm through a wrinkle in potential."
     ]
 }
 
@@ -190,8 +259,52 @@ ABILITIES = [
     "Travels through sound waves."
 ]
 
-# Predefined name list
-NAMES = ["Lirrow", "Emberel", "Tharn", "Nyxa", "Aelynn", "Tirith", "Silranor"]
+NAMES_BY_ELEMENT = {
+    Element.FIRE: [
+        "Emberel", "Pyrrion", "Caldris", "Emberyn", "Ignelle",
+        "Volcaer", "Solvaric", "Fyrannis", "Ashvora", "Cindariel",
+        "Vulkess", "Scorchinelle", "Blazethorn", "Emberith", "Ignisar",
+        "Karnyx", "Flamareth", "Searin", "Moltra", "Blazul"
+    ],
+    Element.WATER: [
+        "Lirrow", "Aquareth", "Thalorin", "Driswyn", "Nevalis",
+        "Nerathis", "Ocevelle", "Brinmar", "Delthera", "Wavethorn", 
+        "Myrris", "Corvalune", "Mistara", "Aquith", "Tidewyn", 
+        "Glacien", "Pearlis", "Kelphor", "Rainnix", "Selmira"
+    ],
+    Element.EARTH: [
+        "Tharn", "Terrakai", "Bramis", "Umberok", "Tremarin",
+        "Gravemoss", "Tharnok", "Ruderalis", "Kaelgrove", "Morbenth", 
+        "Stoneel", "Burrowel", "Terralyn", "Felnroot", "Craggor", 
+        "Umbrisol", "Siltvyne", "Veinwilt", "Mirethorn", "Groven"
+    ],
+    Element.AIR: [
+        "Aelynn", "Zephrae", "Sylune", "Lunthera", "Aureveil", 
+        "Caelistra", "Whisryn", "Aeriven", "Cirraquil", "Galeen", 
+        "Windara", "Soareth", "Skywyn", "Tornis", "Siroveil", 
+        "Zephyra", "Breezinel", "Cloudelle", "Anemir", "Vayra"
+    ],
+    Element.TIME: [
+        "Silranor", "Tirith", "Chronessa", "Tikelor", "Epochyn", 
+        "Momenth", "Kalendrix", "Aevira", "Timasel", "Hourven", 
+        "Wyndclock", "Veridane", "Sundryss", "Temphora", "Pendulae", 
+        "Aeoneth", "Cyclyra", "Veloras", "Anachros", "Zenthros"
+    ],
+    Element.SPIRIT: [
+        "Elossence", "Sylune", "Whismara", "Soulith", "Ephryn", 
+        "Hauntelle", "Numael", "Vespiris", "Drevia", "Phantira", 
+        "Mournix", "Wailen", "Caelmira", "Serephin", "Umbrith", 
+        "Noctelle", "Echoiris", "Phaelys", "Kindross", "Lamenth"
+    ],
+    Element.AETHER: [
+        "Nyxa", "Glacelle", "Aelmora", "Voidelune", "Gravethis", 
+        "Astrofel", "Nebulith", "Cosmira", "Velquor", "Nimbrael", 
+        "Lucenari", "Eclipsys", "Aetherion", "Zoraphine", "Spacelle", 
+        "Dimensar", "Orbyss", "Parallaxa", "Stravon", "Elunex"
+    ]
+}
+
+ALL_NAMES = [name for names in NAMES_BY_ELEMENT.values() for name in names]
 
 # Main generator function
 
@@ -241,7 +354,7 @@ def generate_familiar(locked: dict = None, allow_whimsy: bool = False) -> Famili
 
     # Build and return the Familiar instance
     return Familiar(
-        name=random.choice(NAMES),
+        name=random.choice(ALL_NAMES),
         species=species,
         element=element.value,
         size=locked.get("size") or random.choice(SIZES).value,

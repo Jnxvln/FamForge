@@ -3,6 +3,29 @@
 All notable changes to **FamForge** will be documented here.
 
 ---
+
+## [v0.1.7] - 2025-05-17 - 🪄 Summoning Refined
+### ✨ Enhancements
+- Familiar profiles are now displayed in a richly formatted `Panel` with:
+  - Elemental glyphs and color accents
+  - A bold header (“Your Familiar Appears”)
+  - A subtitle denoting the familiar's element and its associated glyph
+- Summoning experience now feels more magical and consistent, with no variation in display format.
+
+### 🧼 Code Cleanup
+- Refactored data pools into managable JSON files (located in `src/famforge/data`)
+- Removed all branching output logic — summoning always renders in a rich, single-panel style.
+- Streamlined `summon.py` for clarity and maintainability.
+- Centralized formatting logic into `format_profile()` with consistent return types.
+
+### 🔁 Changed
+- `summon call` now always produces the full bordered output — clean, expressive, and unified.
+
+### Fixed
+- 🧠 Fuzzy name matching for `show profile` now works with full names including titles/clans
+
+---
+
 ## [0.1.6] - 2024-05-17
 
 ### Added

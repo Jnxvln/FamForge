@@ -1,0 +1,72 @@
+{
+	"Fire": [
+        "Emberel", "Pyrrion", "Caldris", "Emberyn", "Ignelle",
+        "Volcaer", "Solvaric", "Fyrannis", "Ashvora", "Cindariel",
+        "Vulkess", "Scorchinelle", "Blazethorn", "Emberith", "Ignisar",
+        "Karnyx", "Flamareth", "Searin", "Moltra", "Blazul", 
+        "Aeurexa", "Aeynion", "Calaeith", "Calaeun", "Drisioara", 
+        "Fenquaara", "Fenurexa", "Galanyn", "Galuiel", "Kauun", 
+        "Morioeth", "Silquaion", "Soriros", "Sormirexa", "Thalioion", 
+        "Thalioith", "Thaliriel", "Thalmirara", "Thalynos", "Tirquaos"
+    ],
+    "Water": [
+        "Lirrow", "Aquareth", "Thalorin", "Driswyn", "Nevalis",
+        "Nerathis", "Ocevelle", "Brinmar", "Delthera", "Wavethorn", 
+        "Myrris", "Corvalune", "Mistara", "Aquith", "Tidewyn", 
+        "Glacien", "Pearlis", "Kelphor", "Rainnix", "Selmira", 
+        "Aeirar", "Aeorith", "Calaeeth", "Calraael", "Drisioion", 
+        "Drisoryn", "Fenanen", "Feniros", "Fenithun", "Fenosael", 
+        "Fenuros", "Lumaeiel", "Lumosos", "Sillenexa", "Siluith", 
+        "Soruor", "Thalmiros", "Thalyniel", "Tiroseth", "Tirosun"
+    ],
+    "Earth": [
+        "Tharn", "Terrakai", "Bramis", "Umberok", "Tremarin",
+        "Gravemoss", "Tharnok", "Ruderalis", "Kaelgrove", "Morbenth", 
+        "Stoneel", "Burrowel", "Terralyn", "Felnroot", "Craggor", 
+        "Umbrisol", "Siltvyne", "Veinwilt", "Mirethorn", "Groven", 
+        "Aemireth", "Calithun", "Calraun", "Drisaeiel", "Drisirith", 
+        "Drisuriel", "Fenithara", "Galorith", "Galynor", "Karaun", 
+        "Lumorun", "Moruara", "Moruun", "Siliris", "Siloros", 
+        "Tirelion", "Tirmiroril", "Tirorexa", "Zoriror", "Zormirexa"
+    ],
+    "Air": [
+        "Aelynn", "Zephrae", "Sylune", "Lunthera", "Aureveil", 
+        "Caelistra", "Whisryn", "Aeriven", "Cirraquil", "Galeen", 
+        "Windara", "Soareth", "Skywyn", "Tornis", "Siroveil", 
+        "Zephyra", "Breezinel", "Cloudelle", "Anemir", "Vayra", 
+        "Callenyn", "Drisithael", "Fenosun", "Galoryn", "Galuexa", 
+        "Kaitheth", "Lumurael", "Mormirara", "Morraoril", "Morurara", 
+        "Nyaeoril", "Nyleniel", "Nymirar", "Silithexa", "Sorireth", 
+        "Sorynun", "Thalelara", "Thalithyn", "Thallenos", "Tirorexa"
+    ],
+    "Time": [
+        "Silranor", "Tirith", "Chronessa", "Tikelor", "Epochyn", 
+        "Momenth", "Kalendrix", "Aevira", "Timasel", "Hourven", 
+        "Wyndclock", "Veridane", "Sundryss", "Temphora", "Pendulae", 
+        "Aeoneth", "Cyclyra", "Veloras", "Anachros", "Zenthros", 
+        "Aeelis", "Calmiriel", "Drisynexa", "Galraexa", "Kauren", 
+        "Lumorar", "Lumurael", "Morraiel", "Nyosion", "Silelion", 
+        "Siluris", "Soranar", "Sororexa", "Thalosun", "Thalynara", 
+        "Thalynis", "Tiriros", "Zororar", "Zorosoril", "Zorurun"
+    ],
+    "Spirit": [
+        "Elossence", "Sylune", "Whismara", "Soulith", "Ephryn", 
+        "Hauntelle", "Numael", "Vespiris", "Drevia", "Phantira", 
+        "Mournix", "Wailen", "Caelmira", "Serephin", "Umbrith", 
+        "Noctelle", "Echoiris", "Phaelys", "Kindross", "Lamenth", 
+        "Aeithun", "Drisleniel", "Fenelor", "Galraion", "Kalenis", 
+        "Kaosara", "Lumraun", "Lumynen", "Morquaith", "Nyoros", 
+        "Nyyneth", "Nyynyn", "Silioexa", "Silithyn", "Siluos", 
+        "Sorelun", "Sormirara", "Sorurexa", "Thalmirael", "Velithyn"
+    ],
+    "Aether": [
+        "Nyxa", "Glacelle", "Aelmora", "Voidelune", "Gravethis", 
+        "Astrofel", "Nebulith", "Cosmira", "Velquor", "Nimbrael", 
+        "Lucenari", "Eclipsys", "Aetherion", "Zoraphine", "Spacelle", 
+        "Dimensar", "Orbyss", "Parallaxa", "Stravon", "Elunex", 
+        "Aeiror", "Aeithar", "Calleniel", "Calquaoril", "Driselen", 
+        "Drisioael", "Drislenen", "Fenanun", "Fenorion", "Galleneth", 
+        "Galquaion", "Moranexa", "Morioen", "Mororis", "Nyorael", 
+        "Silynar", "Silynun", "Sorelara", "Sorraith", "Velaeael"
+    ]
+}

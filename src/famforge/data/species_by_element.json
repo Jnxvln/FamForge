@@ -1,0 +1,30 @@
+{
+	"Air": [
+        "Mistcat", "Zephyrfin", "Whispraptor", "Driftalon", "Skywhisp", 
+        "Gustclaw", "Cloudkin", "Stormbleat", "Aerofox", "Vaporyx"
+    ],
+    "Water": [
+        "Glowlizard", "Rippleback", "Kelpray", "Tideglider", "Brinetooth", 
+        "Naiadorn", "Foamscale", "Drenchback", "Coralitch", "Floodmouse"
+    ],
+    "Earth": [
+        "Stonewing", "Mossbeast", "Ashmole", "Rootjaw", "Cragbeast", 
+        "Glimmermole", "Thornox", "Stonecurl", "Lichenhorn", "Burrowelk"
+    ],
+    "Fire": [
+        "Emberox", "Flareling", "Cinderdrake", "Scorchkin", "Ignibark", 
+        "Blazecrow", "Volcaroo", "Cindertuft", "Sparkvex", "Ashadder"
+    ],
+    "Time": [
+        "Hourmoth", "Chronohound", "Tickwyrm", "Sandwyrm", "Tickgeist", 
+        "Clockra", "Hourstag", "Pendulark", "Chronopup", "Temporalin"
+    ],
+    "Spirit": [
+        "Soulfen", "Wispkin", "Umbrawhisper", "Mirthling", "Soulitch", 
+        "Hauntelope", "Grimtail", "Phantasmunk", "Whisperray", "Echofox"
+    ],
+    "Aether": [
+        "Nullcat", "Voidbeak", "Gravitine", "Nebuline", "Voidelk", 
+        "Starvynx", "Galaxbat", "Orbinox", "Quantowl", "Zerokid"
+    ]
+}

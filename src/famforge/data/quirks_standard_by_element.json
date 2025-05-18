@@ -1,0 +1,32 @@
+{
+  "shared": [
+    "Can phase through doors but not windows.",
+    "Sings softly when it rains."
+  ],
+  "Air": [
+    "Only eats fruit offered at dusk.",
+    "Can sense subtle changes in the air."
+  ],
+  "Water": [
+    "Sleeps curled near moonlit ponds.",
+    "Communicates through unsung melodies."
+  ],
+  "Earth": [
+    "Collects shiny pebbles obsessively.",
+    "Plants grow in its wake."
+  ],
+  "Fire": [
+    "Gets emotionally attached to bonfires and mourns them when they die.",
+    "Hiccups occasionally produce harmless sparks (usually).",
+    "Draws little faces on logs before burning them and cries dramatically",
+    "Writes love letters to volcanoes, never gets a reply."
+  ],
+  "Spirit": [
+    "Whispers the intents of nearby creatures.",
+    "Hums ancient songs while dreaming.",
+    "Invisible to most forms of light."
+  ],
+  "Aether": [
+    "Passively composes music based on nearby emotions."
+  ]
+}

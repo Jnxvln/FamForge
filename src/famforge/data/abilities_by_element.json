@@ -1,0 +1,34 @@
+{
+  "shared": [
+    "Detect lies.",
+    "Moves unnoticed in the shadows."
+  ],
+  "Air": [
+    "Communicates with the wind.",
+    "Travels through sound waves.",
+    "Creates a storm of light."
+  ],
+  "Water": [
+    "Heals minor wounds with a touch.",
+    "Dreamwalks into nearby memories."
+  ],
+  "Fire": [
+    "Creates a storm of darkness.",
+    "Glows faintly when danger is near."
+  ],
+  "Time": [
+    "Freezes time for one second when afraid.",
+    "Reverses time for five seconds.",
+    "Creates a mirage of itself from the past."
+  ],
+  "Spirit": [
+    "Manifests the fears of nearby creatures.",
+    "Reads the thoughts of others.",
+    "Moves through solid objects."
+  ],
+  "Aether": [
+    "Converts dark to light.",
+    "Converts light to dark.",
+    "Understands forgotten languages."
+  ]
+}

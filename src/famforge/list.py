@@ -6,17 +6,36 @@ from rich.table import Table
 from rich.console import Console
 from .incantation import generate_incantation
 
-
 app = typer.Typer()
 
 GRIMOIRE_PATH = Path.home() / ".famforge" / "familiars.json"
+
+ELEMENT_COLORS = {
+    "Air": "white",
+    "Water": "blue",
+    "Earth": "green",
+    "Fire": "red",
+    "Time": "magenta",
+    "Spirit": "cyan",
+    "Aether": "purple"
+}
+
+# Shared display name formatting
+def format_display_name(f: dict) -> str:
+    parts = [f"[bold white]{f.get('name', 'Unknown')}[/bold white]"]
+    if f.get("title"):
+        parts.append(f" [dim orchid1]{f['title']}[/dim orchid1]")
+    if f.get("clan"):
+        parts.append(f" [dim cyan]of {f['clan']}[/dim cyan]")
+    return "".join(parts)
 
 @app.command("bonded")
 def list_bonded(
     details: bool = typer.Option(False, "--details", help="Show full details for each familiar"),
     element: str = typer.Option(None, "--element", help="Filter by element (e.g. Fire)"),
     species: str = typer.Option(None, "--species", help="Filter by species (e.g. Emberox)"),
-    name: str = typer.Option(None, "--name", help="Filter by name (e.g. Nyxa)")
+    name: str = typer.Option(None, "--name", help="Filter by name (e.g. Nyxa)"),
+    with_title: bool = typer.Option(False, help="Add a title or clan name to the familiar's name.")
 ):
     """
     List all bonded familiars from your grimoire.
@@ -45,16 +64,6 @@ def list_bonded(
         print("[yellow]No familiars matched your filters.[/yellow]")
         return
 
-    ELEMENT_COLORS = {
-        "Air": "bright_white",
-        "Water": "blue",
-        "Earth": "green",
-        "Fire": "red",
-        "Time": "magenta",
-        "Spirit": "cyan",
-        "Aether": "purple"
-    }
-
     console = Console()
 
     if not details:
@@ -66,28 +75,27 @@ def list_bonded(
         table.add_column("Bond", justify="center", style="green")
 
         for f in familiars:
-            name = f.get("name", "Unknown")
+            display_name = format_display_name(f)
             species = f.get("species", "???")
             element = f.get("element", "???")
             element_color = ELEMENT_COLORS.get(element, "white")
             short_karma = f.get("karma_seed", "")[:8] + "…" if f.get("karma_seed") else "—"
             bond_level = str(f.get("bond_level", 1))
 
-            table.add_row(name, species, f"[{element_color}]{element}[/{element_color}]", short_karma, bond_level)
+            table.add_row(display_name, species, f"[{element_color}]{element}[/{element_color}]", short_karma, bond_level)
 
         console.print(table)
     else:
         console.print("[bold cyan]📜 Bonded Familiars (Detailed View)[/bold cyan]\n")
         for f in familiars:
-            name = f.get("name", "Unknown")
+            display_name = format_display_name(f)
             species = f.get("species", "???")
             element = f.get("element", "???")
             element_color = ELEMENT_COLORS.get(element, "white")
             short_karma = f.get("karma_seed", "")[:8] + "…" if f.get("karma_seed") else "—"
             bond_level = str(f.get("bond_level", 1))
 
-            console.print(f"[bold magenta]{name}[/bold magenta] the [cyan]{species}[/cyan] "
-                          f"([{element_color}]{element}[/{element_color}], Bond {bond_level}, Karma {short_karma})")
+            console.print(f"{display_name} the [cyan]{species}[/cyan] ([{element_color}]{element}[/{element_color}], Bond {bond_level}, Karma {short_karma})")
 
             gender = f.get("gender", "—")
             temperament = f.get("temperament", "—")
@@ -106,8 +114,5 @@ def list_bonded(
                 console.print(f"  • [bold]Ability:[/bold] {ability}")
             if soul_note:
                 console.print(f"  • [bold]Soul Note:[/bold] “{soul_note}”")
-            # if f.get("karma_seed"):
-            #     incantation = generate_incantation(f["karma_seed"])
-            #     console.print(f"  • [bold]Incantation:[/bold] [italic cyan]{incantation}[/italic cyan]")
 
             console.print()

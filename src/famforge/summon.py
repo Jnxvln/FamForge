@@ -1,28 +1,32 @@
 import json
+import random
 import typer
+from time import sleep
 from pathlib import Path
 from rich import print
+from rich.console import Console
 from .generator import generate_familiar
+from .load_data import epithet_titles, clan_names
+from .models import ELEMENT_COLORS
+
 
 app = typer.Typer(help="Summon familiars")
 
-ELEMENT_COLORS = {
-    "Air": "bright_white", "Water": "blue", "Earth": "green",
-    "Fire": "red", "Time": "magenta", "Spirit": "cyan", "Aether": "purple"
-}
-
 @app.command()
 def call(
-    lock_element: str = typer.Option(None, help="Lock a specific element (e.g. Fire)"),
-    lock_species: str = typer.Option(None, help="Lock a specific species (e.g. Emberox)"),
-    lock_temperament: str = typer.Option(None, help="Lock a specific temperament (e.g. Loyal)"),
-    lock_size: str = typer.Option(None, help="Lock a specific size (e.g. Medium)"),
-    lock_gender: str = typer.Option(None, help="Lock a specific gender (e.g. Nonbinary)"),
-    allow_whimsy: bool = typer.Option(False, help="Include humorous or surreal quirks")
+    lock_element: str = typer.Option(None, help="lock a specific element (e.g. Fire)"),
+    lock_species: str = typer.Option(None, help="lock a specific species (e.g. Emberox)"),
+    lock_temperament: str = typer.Option(None, help="lock a specific temperament (e.g. Loyal)"),
+    lock_size: str = typer.Option(None, help="lock a specific size (e.g. Medium)"),
+    lock_gender: str = typer.Option(None, help="lock a specific gender (e.g. Nonbinary)"),
+    allow_whimsy: bool = typer.Option(False, help="include humorous or surreal quirks"),
+    with_title: bool = typer.Option(False, help="add a title or clan name to the familiar's name."),
+
 ):
     """
-    Summon a magical familiar. Optionally lock traits or allow whimsical features.
+    Summon a mystical familiar with optional locked traits and whimsy.
     """
+
     locked_traits = {
         "element": lock_element,
         "species": lock_species,
@@ -32,33 +36,67 @@ def call(
     }
 
     try:
-        familiar = generate_familiar(locked=locked_traits, allow_whimsy=allow_whimsy)
+        familiar = generate_familiar(
+            locked=locked_traits, 
+            allow_whimsy=allow_whimsy
+        )
 
-        element = familiar.element
-        color = ELEMENT_COLORS.get(element, "white")
+        # Randomly assign title/clan if flag is set
+        if with_title:
+            match random.randint(1, 4):
+                case 1:
+                    pass  # Neither
+                case 2:
+                    familiar.title = random.choice(epithet_titles)
+                case 3:
+                    familiar.clan = random.choice(clan_names)
+                case 4:
+                    familiar.title = random.choice(epithet_titles)
+                    familiar.clan = random.choice(clan_names)
 
-        print("\n[bold cyan]You have summoned...[/bold cyan]\n")
-        print(f"[bold yellow]Name:[/bold yellow] {familiar.name}")
-        print(f"[bold yellow]Species:[/bold yellow] {familiar.species}")
-        print(f"[bold yellow]Element:[/bold yellow] [{color}]{element}[/{color}]")
-        print(f"[bold yellow]Size:[/bold yellow] {familiar.size}")
-        print(f"[bold yellow]Gender:[/bold yellow] {familiar.gender}")
-        print(f"[bold yellow]Temperament:[/bold yellow] {familiar.temperament}")
-        print(f"[bold yellow]Origin:[/bold yellow] {familiar.origin}")
-        print("[bold yellow]Quirks:[/bold yellow]", *[f"\n  • {q}" for q in familiar.quirks])
-        print(f"[bold yellow]Ability:[/bold yellow] {familiar.passive_ability}")
-        print(f"[bold yellow]Bond Level:[/bold yellow] {familiar.bond_level}")
-        print(f"[bold yellow]Soul Note:[/bold yellow] {familiar.soul_note}")
-        print(f"[bold yellow]Karma Seed:[/bold yellow] {familiar.karma_seed}")
+        console = Console()
         
+        summon_messages = [
+            "🌫️  The mists begin to swirl...",
+            "✨ [purple1]The veil between realms thins...",
+            "🌌 You are [yellow]summoning...[/yellow]",
+            "🌀 A presence forms [dim white]from the aether...[/dim white]",
+            "🔥 [red]Embers dance and coalesce[/red] [dim yellow]among you..[/dim yellow]",
+            "🌿 The roots remember [orchid1]your name...[/orchid1]",
+            "💧 A ripple moves [dim]across time...[/dim]",
+            "🕯️ [yellow]The light flickers,[/yellow] [dim yellow]something approaches...[/dim yellow]"
+        ]
+
+        intro = random.choice(summon_messages)
+        console.print(f"\n[bold blue]{intro}[/bold blue]", end=" ")
+
+        # Arcane effect animation
+        glyphs = ["✦", "◈", "⋆", "✴", "✷"]
+        colors = ["magenta", "cyan", "orchid", "sky_blue1", "plum1", "medium_purple", "deep_pink3", "slate_blue1"]
+        
+        # Animate summoning glyphs across the veil
+        for _ in range(8):
+            glyph = random.choice(glyphs)
+            color = random.choice(colors)
+            console.print(f"[{color}]{glyph}[/{color}]", end=" ", soft_wrap=True)
+            sleep(0.25)
+            
+        sleep(1)
+        
+        console.print()
+        console.print()
+        
+        # Richly print the familiar's profile
+        output = familiar.format_profile(rich=True)
+        if output:
+            for line in output:
+                console.print(line)
+
         # Save last summoned familiar for bonding
-        
-        # Safely serialize Familiar
         TEMP_PATH = Path.home() / ".famforge" / "last_summoned.json"
         TEMP_PATH.parent.mkdir(parents=True, exist_ok=True)
-        data = familiar.model_dump() # Using Pydantic v2 `model_dump`
+        data = familiar.model_dump()  # Pydantic v2
 
-        # Write to file
         with open(TEMP_PATH, "w") as f:
             json.dump(data, f, indent=2)
 

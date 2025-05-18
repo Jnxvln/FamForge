@@ -52,22 +52,18 @@ famforge summon call --lock-element Fire --lock-size Medium --allow-whimsy
 ```bash
 famforge summon call --lock-element Fire
 
-You have summoned...
+🔥 Embers dance and coalesce among you.. ✷ ✷ ✴ ✦ ⋆ ◈ ✷ ⋆ 
 
-Name: Nyxa
-Species: Emberox
-Element: Fire
-Size: Tiny
-Gender: Nonbinary
-Temperament: Brave
-Origin: Ignited from embers of a sacred pyre.
+📍 Your Familiar Appears
+
+🌿🌿 Aemireth the Ashmole (Earth, Bond 1, Karma 306e294d…) 🌿🌿
+Origin: Shaped from loam touched by ancestral memory.
+Gender: Fluid | Temperament: Human
 Quirks:
-  • Communicates through shifting light patterns.
-  • Sleeps curled near moonlight.
-Ability: Glows faintly when danger is near.
-Bond Level: 1
-Soul Note: None
-Karma Seed: 84aa90ae-3417-47b5-b4e9-beee20273ba9
+  • Collects shiny pebbles obsessively.
+  • Winks uncontrollably during full moons.
+Ability: Moves unnoticed in the shadows.
+Bound to Earth — 🌿
 ```
 
 ---
@@ -75,7 +71,7 @@ Karma Seed: 84aa90ae-3417-47b5-b4e9-beee20273ba9
 ### Bond with the Last Summoned Familiar
 
 ```bash
-famforge bond now --name Nyxa
+famforge bond now --name Aemireth
 ```
 
 ---
@@ -83,7 +79,7 @@ famforge bond now --name Nyxa
 ### Add a Soul Note
 
 ```bash
-famforge bond note --name Nyxa --note "You were with me during the fire."
+famforge bond note --name Aemireth --note "You found me when I needed you."
 ```
 
 ---
@@ -91,7 +87,7 @@ famforge bond note --name Nyxa --note "You were with me during the fire."
 ### Reveal the Familiar’s Incantation
 
 ```bash
-famforge reveal incantation Nyxa
+famforge reveal incantation Aemireth
 # Example: dusk-glyph-flicker
 ```
 
@@ -100,7 +96,7 @@ famforge reveal incantation Nyxa
 ### Display the Familiar’s Sigil
 
 ```bash
-famforge sigil Nyxa
+famforge sigil Aemireth
 ```
 
 ---
@@ -108,7 +104,7 @@ famforge sigil Nyxa
 ### Decode a Binary Incantation
 
 ```bash
-famforge reveal decode 0110010001110101011100110110101100101101011001110110110001101001011110000010110101100011011011110110010001100101
+famforge reveal decode 011001000111010101110011011010110010110101100111011011000111100101110000011010000010110101100011011011110110010001100101
 # Output: dusk-glyph-code
 ```
 
@@ -153,7 +149,7 @@ famforge list bonded --details
 ### View a Full Familiar Profile
 
 ```bash
-famforge show profile Nyxa
+famforge show profile Aemireth
 ```
 
 ---
@@ -199,9 +195,13 @@ famforge --version
 - [x] `reveal decode` decodes incantation text from binary
 - [x] `unlock <incantation>` command to reveal hidden rituals
 - [x] `ritual greet` (hidden command unlocked via incantation)
+- [x] centralized profile panel rendering
+- [x] support for whimsical quirks
 - [ ] `bond levelup`
 - [ ] `list bonded --random`
 - [ ] `export` as Markdown
+- [ ] CLI theming system
+- [ ] Ritual framework expansion
 
 ---
 

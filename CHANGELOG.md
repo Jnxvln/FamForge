@@ -13,7 +13,7 @@ All notable changes to **FamForge** will be documented here.
 - Summoning experience now feels more magical and consistent, with no variation in display format.
 
 ### 🧼 Code Cleanup
-- Refactored data pools into managable JSON files (located in `src/famforge/data`)
+- Refactored data pools into manageable JSON files (located in `src/famforge/data`)
 - Removed all branching output logic — summoning always renders in a rich, single-panel style.
 - Streamlined `summon.py` for clarity and maintainability.
 - Centralized formatting logic into `format_profile()` with consistent return types.

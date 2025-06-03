@@ -9,7 +9,7 @@ app = typer.Typer(help="Render the sigil of a familiar", invoke_without_command=
 
 GRIMOIRE_PATH = Path.home() / ".famforge" / "familiars.json"
 
-# Word banks for passphrase construction
+# Word banks for incantation construction
 ESSENCE_WORDS: List[str] = [
     "veil", "ember", "dusk", "spirit", "aether",
     "dream", "soul", "cinder", "echo", "shadow",

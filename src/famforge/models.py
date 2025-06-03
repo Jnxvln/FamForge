@@ -108,3 +108,5 @@ class Familiar(BaseModel):
             )
 
             return [panel]
+        else:
+            return lines
